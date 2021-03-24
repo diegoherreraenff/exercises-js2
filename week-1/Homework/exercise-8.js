@@ -101,3 +101,13 @@ var mentors = [
 
 //YOUR CODE HERE
 
+let liveInBarcelona= []
+
+mentors.forEach(element => {
+  let filter =this.skills.filter("React")
+  if (element.skills === filter && element.job.city == "Barcelona")
+  liveInBarcelona.push("Hola, mi nombre es " + element.firstName + element.lastName +  " Trabajo en Barcelona y conozco React ")
+  
+});
+
+console.log (liveInBarcelona)

@@ -58,14 +58,45 @@ let restaurant1 = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
+
+    
     findAvailableRestaurants: function (numberOfPeople) {
-      // Complete here
+      // Complete herez
+      let nameRestaurant= [];
+      let  free = element => {
+        if (numberOfPeople <= element.totalSeats - element.numberOfCustomers){
+          nameRestaurant.push(element.name)
+        
+        }
+        
+      }   
+      restaurants.map(free)
+        return nameRestaurant
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     },
+
+    
     findRestaurantServingDish: function (dishName) {
+      let nameRestaurant1 =[]
+      let plato = element => {
+        if (element.menu.includes(dishName)){
+          nameRestaurant1.push(element.name)
+        }
+      }
+      restaurants.map(plato)
+      return nameRestaurant1
       // Complete here
     },
     countNumberOfRestaurantsInArea: function (area) {
       // Complete here
+      let arearestaurant =[]
+      let listRestaurant = element => {
+        if (element.area === area){
+          arearestaurant.push(element.address.area)
+        }
+      }
+      restaurants.map(listRestaurant)
+      return arearestaurant
     },
   };
   
