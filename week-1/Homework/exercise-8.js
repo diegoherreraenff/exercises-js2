@@ -41,21 +41,21 @@ function removeSkill(mentors,newSkill){
 function addStudentLikes(mentors){
   //your code here
 }
-*/ 
+*/
 
 var mentors = [
   {
     firstName: "Antonio",
     lastName: "Miranda",
-    skills: ["JS","React","Node"],
+    skills: ["JS", "React", "Node"],
     class: "Mar1",
     studentLikes: 0,
     job:
-      {
-        company: "Google",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Google",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "Leo",
@@ -64,50 +64,89 @@ var mentors = [
     class: "Mar3",
     studentLikes: 0,
     job:
-      {
-        company: "FC Barcelona",
-        position: "Player",
-        city: "Barcelona"
-      }
+    {
+      company: "FC Barcelona",
+      position: "Player",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "John",
     lastName: "VanDamme",
-    skills: ["React","Angular","Python","Node"],
+    skills: ["React", "Angular", "Python", "Node"],
     class: "Mar4",
     studentLikes: 0,
     job:
-      {
-        company: "Facebook",
-        position: "Software Manager",
-        city: "Chicago"
-      }
-  },  
+    {
+      company: "Facebook",
+      position: "Software Manager",
+      city: "Chicago"
+    }
+  },
   {
     firstName: "Giorgio",
     lastName: "Polvara",
-    skills: ["HTML","JS","React"],
+    skills: ["HTML", "JS", "React"],
     class: "Mar2",
     studentLikes: 0,
     job:
-      {
-        company: "Amazon",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Amazon",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
 
 ];
 
 //YOUR CODE HERE
 
-let liveInBarcelona= []
+// 1 mentors that are in Barcelona and one of the skills is React
+
+let liveInBarcelona = []
 
 mentors.forEach(element => {
-  let filter =this.skills.filter("React")
-  if (element.skills === filter && element.job.city == "Barcelona")
-  liveInBarcelona.push("Hola, mi nombre es " + element.firstName + element.lastName +  " Trabajo en Barcelona y conozco React ")
-  
-});
 
-console.log (liveInBarcelona)
+
+  if (element.job.city === "Barcelona" && element.skills.includes("React")) {
+    liveInBarcelona.push("hi my name is " + element.firstName + " " + element.lastName + " I work in Barcelona and i know React.")
+  }
+})
+console.log(liveInBarcelona)
+
+//2. To those that work in Barcelona, set "Jun1" in the class attribute,  and add a new skill to the list "SQL".
+
+let addNewSkils= mentors.map(element => {
+  let newSkils = "SQL"
+  if (element.job.city === "Barcelona") {
+    element.skills.push(newSkils), element.class = "jun1"
+  }
+} 
+)
+ 
+mentors.forEach( mentors => console.log ( mentors.job.city + mentors.skills))
+
+
+
+//3. Create an object method with the name .addSkill() to be able to add skills from it
+
+mentors.forEach(function (mentor) {
+  
+  mentors.addSkill =
+  function (skillsnew) {
+    this.skills.push(skillsnew)
+  }
+})
+//mentors.addSkill = ["hola soy nuevo"]
+
+console.log (mentors.addSkill)
+
+//4. Create a function to add a skill to all members in a list of mentors//
+
+
+function addNewSkill(mentors, newskill) {
+  mentors.forEach(element => element.addSkill(newskill) )
+  
+}
+console.log(addNewSkils(mentors , "javascript"))
+

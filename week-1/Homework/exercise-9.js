@@ -50,15 +50,32 @@ var shoppingCart = {
   selectedProducts: []
 };
 
-function addToShoppingCart(id){
 
+function addToShoppingCart(id){
+products.forEach(element => {
+  if(element.id === id ) {
+    shoppingCart.selectedProducts.push(element);
+    shoppingCart.totalPrice += element.price
+  }
+  
+});
 }
 
+
 function removeFromShoppingCart(id){
+  let removeprodcut= shoppingCart.selectedProducts.filter(element => element.id !== id)
+  shoppingCart.selectedProducts =removeprodcut;
+  shoppingCart.totalPrice = removeprodcut.map(element => element.price).reduce((total, priceTotal) => total + priceTotal)
 
 }
 
 function shop(){
+  products.map(function(element) {
+    if (shoppingCart.selectedProducts.includes(element)) {
+      element.stock
+    }
+    
+  })
 
 }
 
