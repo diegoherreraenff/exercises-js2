@@ -13,8 +13,23 @@
  *      .....
  * </div>
  */
+let content = document.querySelector("#content");
+console.log(content)
 function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
+  arrayOfPeople.forEach(element => {
+    const h1 = document.createElement("h1")
+    h1.append(element.name);
+    const h2 = document.createElement("h2")
+    h2.append(element.job)
+    content.append(h1, h2)
+  });
+
+
+
+
+
+
+
 }
 
 /**
@@ -26,6 +41,15 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  const list = document.createElement("ul")
+  shopping.forEach(element => {
+    const list2 = document.createElement("li")
+    list2.append(element)
+    list.append(list2)
+
+
+  });
+  content.append(list)
 }
 
 /**
@@ -59,6 +83,35 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  elementoH1 = document.createElement("h1");
+  elementoH1.append("Book List")
+  elementoUL = document.createElement("ul")
+
+  let img1 = "week-2\Homework\1-exercises\imgen\the-design.jpeg";
+  let img2 = "week-2\Homework\1-exercises\imgen\the-most.jpeg";
+  let img3 = "week-2\Homework\1-exercises\imgen\the-pragmatic.png";
+  let arrayimagen = [];
+  arrayimagen.push(img1, img2, img3)
+  books.forEach((book, i) => {
+    const elementoLI = document.createElement("li")
+    const elementoP = document.createElement("p");
+    const elementoimagen = document.createElement("img");
+    elementoP.append(book.title + book.author);
+    elementoLI.classList.add("list-class")
+
+    elementoimagen.src = arrayimagen[i];
+    if (book.alreadyRead) {
+      elementoLI.style.backgroundColor = "green"
+    } else {
+      elementoLI.style.backgroundColor = "red"
+    }
+    elementoUL.append(elementoLI);
+  }
+  )
+
+content.append(elementoH1, elementoUL)
+
+  
 }
 
 //
