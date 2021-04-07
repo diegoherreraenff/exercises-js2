@@ -1,1 +1,18 @@
 /** Write your CSS in here **/
+   
+
+#imagenes {
+       width: 500px;
+       height: 400px;
+       display: flex;
+       justify-content: center;
+
+   }
+
+   .bton {
+       margin: 1em 1em ;
+       font-size: 2rem ;
+       display: flex;
+       justify-content: space-between;
+       flex-direction: row;
+   }
