@@ -17,10 +17,11 @@ imagen.src = coleccionImagenes[0]
 let interval = -1 
 
 function iteracion() {
-    index++
+    index = (index + 1) % coleccionImagenes.length 
+    /* index ++
     if (index === coleccionImagenes.length) {
         index = 0
-    }
+    } */
     imagen.src = coleccionImagenes[index]
 }
 
@@ -42,10 +43,12 @@ back.addEventListener("click", () => {
 });
 
 start.addEventListener("click", () => {
+    clearInterval (interval)
    interval = setInterval(iteracion, 1000)
 });
 
 starBack.addEventListener("click", () => {
+    clearInterval (interval)
     interval = setInterval(backIteracion, 1000)
 });
 console.log (interval)
