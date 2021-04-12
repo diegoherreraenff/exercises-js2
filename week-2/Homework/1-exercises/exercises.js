@@ -87,15 +87,16 @@ function exerciseThree(books) {
   elementoH1.append("Book List")
   elementoUL = document.createElement("ul")
 
-  let img1 = "week-2\Homework\1-exercises\imgen\the-design.jpeg";
-  let img2 = "week-2\Homework\1-exercises\imgen\the-most.jpeg";
-  let img3 = "week-2\Homework\1-exercises\imgen\the-pragmatic.png";
+  let img1 = "./imagen/the-design.jpeg";
+  let img2 = "./imagen/the-most.jpeg";
+  let img3 = "./imagen/the-pragmatic.png";
   let arrayimagen = [];
   arrayimagen.push(img1, img2, img3)
   books.forEach((book, i) => {
     const elementoLI = document.createElement("li")
     const elementoP = document.createElement("p");
     const elementoimagen = document.createElement("img");
+    
     elementoP.append(book.title + book.author);
     elementoLI.classList.add("list-class")
 
@@ -105,7 +106,9 @@ function exerciseThree(books) {
     } else {
       elementoLI.style.backgroundColor = "red"
     }
-    elementoUL.append(elementoLI);
+    elementoUL.appendChild(elementoLI);
+    elementoLI.appendChild(elementoP)
+    elementoLI.appendChild(elementoimagen)
   }
   )
 

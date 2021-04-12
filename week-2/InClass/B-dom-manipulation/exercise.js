@@ -3,7 +3,9 @@ Task 1
 =======
 Write JavaScript below that logs:
     1. all the "p" element nodes of the document,
-    --> should log a list of nodes with a length of 6
+    --> should log a list of nodes with a length of 6 /*
+    
+ 
 
     2. the first div element node
     --> should log the ".site-header" node
@@ -15,8 +17,18 @@ Write JavaScript below that logs:
     --> should log a list of nodes with a length of 3
 
 */
+ // all the "p" element nodes of the document,
+ console.log (document.querySelector("p"))
+
+ //the first div element node
+ console.log (document.querySelector("div"))
+
+// the element with id "jumbotron-text"
+console.log(document.getElementById("jumbotron-text"))
 
 
+//all the "p" elements of contained inside  the .primary-content element
+ console.log(document.querySelector("primary-content.p"))
 /*
 Task 2
 ======
@@ -24,6 +36,14 @@ Task 2
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
 
+function alet(event) {
+    event.preventDefault()
+    alert("Thanks for visiting Bikes for Refugees!")
+    
+}
+
+const button = document.getElementById("alertBtn")
+button.addEventListener("click", alet)
 
 /*
 Task 3
@@ -31,14 +51,39 @@ Task 3
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
+//funcion callback 
+function changeColor(event) {
+    event.preventDefault()
+    const body = document.querySelector ("body")
+    if (body.style.background === "white") {
+        body.style.background = "tomato"
+} else {body.style.background = "white"}
+    }
+    
+//obternet objeto boton
+const backColor = document.getElementById("bgrChangeBtn")
+//agregar event listener
+backColor.addEventListener("click" , changeColor)
 
 
 /*
 Task 4
 ======
 
+
 When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
-*/
+*/ 
+
+// 1
+function text(event) {
+    event.preventDefault()
+
+    
+}
+//2
+const  addtext= document.getElementById("addTextBtn")
+//3
+addtext.addEventListener("click", text)
 
 
 
